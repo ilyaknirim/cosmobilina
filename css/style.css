@@ -1,63 +1,101 @@
+/* Глобальные стили и переменные */
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #ffd700;
+    --text-color: #fff;
+    --bg-dark: #0a0a0a;
+    --bg-medium: #1a1a2e;
+    --bg-light: #16213e;
+    --transition-speed: 0.3s;
+}
+
+/* Базовые стили */
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-light) 100%);
     font-family: 'Arial', sans-serif;
-    color: #fff;
+    color: var(--text-color);
 }
 
-#startScreen {
+/* Контейнеры экранов */
+.screen {
+    display: none;
+    height: 100vh;
+    text-align: center;
+}
+
+.screen.active {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    text-align: center;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0.2"/></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23grad)"/></svg>') no-repeat center center;
+}
+
+/* Главный экран */
+#startScreen {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:0.8"/><stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:0.2"/></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23grad)"/></svg>') no-repeat center center;
     background-size: cover;
 }
 
 #startScreen h1 {
     font-size: 3em;
     margin-bottom: 20px;
-    text-shadow: 0 0 20px #ff6b6b, 0 0 40px #4ecdc4;
-    color: #ffd700;
+    text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--secondary-color);
+    color: var(--accent-color);
 }
 
-#startGameBtn {
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+/* Стили кнопок */
+.btn {
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
-    color: #fff;
+    color: var(--text-color);
     border-radius: 10px;
     cursor: pointer;
-    margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
 }
 
-#startGameBtn:hover {
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.btn-primary:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(255, 107, 107, 0.8);
 }
 
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Меню */
 .menu {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .menuBtn {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ffd700;
+    border: 1px solid var(--accent-color);
     padding: 10px 20px;
-    color: #ffd700;
+    color: var(--accent-color);
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
 }
 
 .menuBtn:hover {
@@ -65,9 +103,9 @@ body {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
+/* Экран с описанием */
 #loreScreen {
     padding: 20px;
-    height: 100vh;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.9);
 }
@@ -76,10 +114,16 @@ body {
     background: #333;
     border: 1px solid #666;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--text-color);
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
+    transition: all var(--transition-speed) ease;
+}
+
+#backBtn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 #loreContent {
@@ -88,6 +132,7 @@ body {
     line-height: 1.6;
 }
 
+/* Игровой интерфейс */
 #gameUI {
     position: absolute;
     top: 10px;
@@ -97,12 +142,12 @@ body {
 
 #pauseBtn {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ffd700;
+    border: 1px solid var(--accent-color);
     padding: 10px 20px;
-    color: #ffd700;
+    color: var(--accent-color);
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
 }
 
 #pauseBtn:hover {
@@ -110,8 +155,29 @@ body {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
+/* Игровой холст */
 #gameCanvas {
     display: block;
     width: 100vw;
     height: 100vh;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    #startScreen h1 {
+        font-size: 2em;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    
+    .menu {
+        gap: 5px;
+    }
+    
+    .menuBtn {
+        padding: 8px 15px;
+    }
 }
