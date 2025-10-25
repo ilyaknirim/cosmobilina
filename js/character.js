@@ -11,6 +11,15 @@ class Character extends Entity {
         this.isMouseDown = false;
         this.mouseX = 0;
         this.mouseY = 0;
+        this.lastDirection = 0; // 0: idle, 1: right, -1: left
+        this.rightImage = new Image();
+        this.rightImage.src = 'sprites/left_c.svg';
+        this.rightLoaded = false;
+        this.rightImage.onload = () => { this.rightLoaded = true; };
+        this.leftImage = new Image();
+        this.leftImage.src = 'sprites/right_c.svg';
+        this.leftLoaded = false;
+        this.leftImage.onload = () => { this.leftLoaded = true; };
     }
 
     update() {
@@ -24,11 +33,14 @@ class Character extends Entity {
 
         if (Math.abs(this.x - this.targetX) > this.moveSpeed) {
             if (this.x < this.targetX) {
+                this.lastDirection = 1; // moving right
                 this.x += this.moveSpeed;
             } else {
+                this.lastDirection = -1; // moving left
                 this.x -= this.moveSpeed;
             }
         } else {
+            this.lastDirection = 0; // idle
             this.x = this.targetX;
         }
 
@@ -44,7 +56,13 @@ class Character extends Entity {
     }
 
     draw(ctx) {
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        let imageToDraw = this.image;
+        if (this.lastDirection === 1 && this.rightLoaded) {
+            imageToDraw = this.rightImage;
+        } else if (this.lastDirection === -1 && this.leftLoaded) {
+            imageToDraw = this.leftImage;
+        }
+        ctx.drawImage(imageToDraw, this.x, this.y, this.width, this.height);
     }
 
     handleMouseDown(event) {

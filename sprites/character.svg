@@ -1,67 +1,172 @@
 <svg width="200" height="300" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="simpleArmor" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#8B4513"/>
       <stop offset="100%" stop-color="#5D2906"/>
     </linearGradient>
-    <linearGradient id="simpleCloak">
+    <linearGradient id="cloakGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1A237E"/>
       <stop offset="100%" stop-color="#283593"/>
     </linearGradient>
+    <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFDBAC"/>
+      <stop offset="100%" stop-color="#E8C39E"/>
+    </linearGradient>
   </defs>
 
-  <!-- Силуэт и основа -->
   <!-- Плащ -->
-  <path d="M 30 40 Q 50 20 70 40 L 65 120 Q 50 100 35 120 Z" 
-        fill="url(#simpleCloak)" opacity="0.9" stroke="#0D1B3A" stroke-width="1"/>
-  
+  <path d="M 20 50 
+           Q 50 30 80 50 
+           L 75 130 
+           Q 50 110 25 130 
+           Z" 
+        fill="url(#cloakGradient)" 
+        stroke="#0D1B3A" 
+        stroke-width="1">
+    <animate attributeName="d" 
+             dur="4s" 
+             repeatCount="indefinite"
+             values="M 20 50 Q 50 30 80 50 L 75 130 Q 50 110 25 130 Z;
+                     M 20 50 Q 50 28 80 50 L 75 130 Q 50 112 25 130 Z;
+                     M 20 50 Q 50 30 80 50 L 75 130 Q 50 110 25 130 Z"/>
+  </path>
+
   <!-- Тело -->
-  <rect x="40" y="50" width="20" height="50" fill="url(#simpleArmor)" stroke="#000" stroke-width="1"/>
-  
-  <!-- Голова -->
-  <circle cx="50" cy="35" r="12" fill="#FFDBAC" stroke="#000" stroke-width="1"/>
-  
-  <!-- Борода -->
-  <path d="M 42 38 Q 50 50 58 38" stroke="#8D6E63" stroke-width="4" stroke-linecap="round" fill="none"/>
-  
-  <!-- Волосы и шапка -->
-  <path d="M 40 25 Q 50 18 60 25 L 58 35 L 42 35 Z" fill="#5D4037"/>
-  <rect x="44" y="20" width="12" height="8" fill="#C62828" stroke="#000" stroke-width="0.5"/>
-  
-  <!-- Лицо - минималистичное -->
-  <!-- Глаза -->
-  <line x1="45" y1="32" x2="48" y2="32" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/>
-  <line x1="52" y1="32" x2="55" y2="32" stroke="#1565C0" stroke-width="2" stroke-linecap="round"/>
-  
-  <!-- Брови -->
-  <path d="M 44 30 L 46 28" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M 56 30 L 54 28" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
-  
-  <!-- Рот -->
-  <path d="M 46 40 Q 50 42 54 40" stroke="#5D4037" stroke-width="1" fill="none"/>
-  
-  <!-- Ключевые детали -->
-  <!-- Плечи -->
-  <circle cx="38" cy="55" r="6" fill="url(#simpleArmor)" stroke="#000" stroke-width="1"/>
-  <circle cx="62" cy="55" r="6" fill="url(#simpleArmor)" stroke="#000" stroke-width="1"/>
-  
-  <!-- Оберег -->
-  <circle cx="50" cy="65" r="5" fill="none" stroke="#FFD700" stroke-width="1"/>
-  <circle cx="50" cy="65" r="2" fill="#FFD700"/>
-  
-  <!-- Пояс -->
-  <rect x="38" y="85" width="24" height="4" fill="#5D2906" stroke="#000" stroke-width="0.5"/>
-  
+  <rect x="40" y="50" width="20" height="60" fill="url(#bodyGradient)" stroke="#000" stroke-width="1">
+    <animate attributeName="height" values="60;58;60" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="50;51;50" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
   <!-- Ноги -->
-  <rect x="42" y="100" width="6" height="30" fill="#2C3E50" stroke="#000" stroke-width="1"/>
-  <rect x="52" y="100" width="6" height="30" fill="#2C3E50" stroke="#000" stroke-width="1"/>
+  <rect x="42" y="110" width="6" height="25" fill="#2C3E50" stroke="#000" stroke-width="1">
+    <animate attributeName="height" values="25;23;25" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="110;112;110" dur="3s" repeatCount="indefinite"/>
+  </rect>
   
-  <!-- Технологические элементы -->
-  <!-- Наручи -->
-  <rect x="32" y="65" width="4" height="10" fill="#37474F" stroke="#000" stroke-width="0.5"/>
-  <rect x="64" y="65" width="4" height="10" fill="#37474F" stroke="#000" stroke-width="0.5"/>
+  <rect x="52" y="110" width="6" height="25" fill="#2C3E50" stroke="#000" stroke-width="1">
+    <animate attributeName="height" values="25;27;25" dur="3s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="y" values="110;108;110" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </rect>
+
+  <!-- Голова -->
+  <circle cx="50" cy="35" r="12" fill="url(#skinGradient)" stroke="#000" stroke-width="1">
+    <animate attributeName="cy" values="35;34;35" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Борода -->
+  <path d="M 42 40 
+           Q 50 48 58 40" 
+        stroke="#8D6E63" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        fill="none">
+    <animate attributeName="d" 
+             dur="3s" 
+             repeatCount="indefinite"
+             values="M 42 40 Q 50 48 58 40;
+                     M 42 40 Q 50 47 58 40;
+                     M 42 40 Q 50 48 58 40"/>
+  </path>
+
+  <!-- Волосы -->
+  <path d="M 38 26 
+           Q 50 20 62 26 
+           L 60 38 
+           L 40 38 
+           Z" 
+        fill="#5D4037" 
+        stroke="#000" 
+        stroke-width="0.5">
+    <animate attributeName="d" 
+             dur="4s" 
+             repeatCount="indefinite"
+             values="M 38 26 Q 50 20 62 26 L 60 38 L 40 38 Z;
+                     M 38 25 Q 50 20 62 25 L 60 38 L 40 38 Z;
+                     M 38 26 Q 50 20 62 26 L 60 38 L 40 38 Z"/>
+  </path>
+
+  <!-- Богатырская шапка -->
+  <rect x="42" y="22" width="16" height="6" fill="#C62828" stroke="#000" stroke-width="0.5">
+    <animate attributeName="y" values="22;21;22" dur="3s" repeatCount="indefinite"/>
+  </rect>
   
-  <!-- Плечевые генераторы -->
-  <circle cx="38" cy="55" r="2" fill="#4FC3F7"/>
-  <circle cx="62" cy="55" r="2" fill="#4FC3F7"/>
+  <rect x="44" y="16" width="12" height="8" fill="#C62828" stroke="#000" stroke-width="0.5">
+    <animate attributeName="height" values="8;7;8" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="16;17;16" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Лицо -->
+  <!-- Глаза -->
+  <line x1="45" y1="34" x2="48" y2="34" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round">
+    <animate attributeName="y1" values="34;33.5;34" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="34;33.5;34" dur="2s" repeatCount="indefinite"/>
+  </line>
+  
+  <line x1="52" y1="34" x2="55" y2="34" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round">
+    <animate attributeName="y1" values="34;34.5;34" dur="2s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="y2" values="34;34.5;34" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </line>
+
+  <!-- Брови -->
+  <path d="M 44 31 L 46 29" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round">
+    <animate attributeName="d" 
+             dur="3s" 
+             repeatCount="indefinite"
+             values="M 44 31 L 46 29;
+                     M 44 30.5 L 46 28.5;
+                     M 44 31 L 46 29"/>
+  </path>
+  
+  <path d="M 56 31 L 54 29" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round">
+    <animate attributeName="d" 
+             dur="3s" 
+             repeatCount="indefinite"
+             values="M 56 31 L 54 29;
+                     M 56 30.5 L 54 28.5;
+                     M 56 31 L 54 29"/>
+  </path>
+
+  <!-- Рот -->
+  <path d="M 46 42 Q 50 44 54 42" stroke="#5D4037" stroke-width="1" fill="none">
+    <animate attributeName="d" 
+             dur="4s" 
+             repeatCount="indefinite"
+             values="M 46 42 Q 50 44 54 42;
+                     M 46 42.2 Q 50 43.8 54 42.2;
+                     M 46 42 Q 50 44 54 42"/>
+  </path>
+
+  <!-- Плечи -->
+  <circle cx="35" cy="55" r="8" fill="url(#bodyGradient)" stroke="#000" stroke-width="1">
+    <animate attributeName="cy" values="55;54;55" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="65" cy="55" r="8" fill="url(#bodyGradient)" stroke="#000" stroke-width="1">
+    <animate attributeName="cy" values="55;56;55" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+
+  <!-- Руки -->
+  <rect x="32" y="65" width="4" height="12" fill="#37474F" stroke="#000" stroke-width="0.5">
+    <animate attributeName="y" values="65;64;65" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+  
+  <rect x="64" y="65" width="4" height="12" fill="#37474F" stroke="#000" stroke-width="0.5">
+    <animate attributeName="y" values="65;66;65" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+  </rect>
+
+  <!-- Оберег -->
+  <circle cx="50" cy="70" r="6" fill="none" stroke="#FFD700" stroke-width="1">
+    <animate attributeName="r" values="6;5.5;6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="50" cy="70" r="2" fill="#FFD700">
+    <animate attributeName="r" values="2;2.5;2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Пояс -->
+  <rect x="38" y="100" width="24" height="4" fill="#5D2906" stroke="#000" stroke-width="0.5">
+    <animate attributeName="width" values="24;23;24" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="38;38.5;38" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
 </svg>

@@ -1,0 +1,107 @@
+<svg width="200" height="300" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="runLeftBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B4513"/>
+      <stop offset="100%" stop-color="#5D2906"/>
+    </linearGradient>
+    <linearGradient id="runLeftCloak">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Плащ (развевается в другую сторону) -->
+  <path d="M 25 40 Q 50 25 70 45 L 65 120 Q 50 105 30 120 Z" 
+        fill="url(#runLeftCloak)" opacity="0.9" stroke="#0D1B3A" stroke-width="1">
+    <animate attributeName="d" 
+             dur="0.6s" 
+             repeatCount="indefinite"
+             values="M 25 40 Q 50 25 70 45 L 65 120 Q 50 105 30 120 Z;
+                     M 30 35 Q 55 20 75 40 L 70 115 Q 55 100 35 115 Z;
+                     M 25 40 Q 50 25 70 45 L 65 120 Q 50 105 30 120 Z"/>
+  </path>
+
+  <!-- Тело (наклон вперед) -->
+  <rect x="42" y="50" width="16" height="55" fill="url(#runLeftBody)" stroke="#000" stroke-width="1">
+    <animate attributeName="x" values="42;44;42" dur="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="55;53;55" dur="0.6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Голова (наклон вперед) -->
+  <ellipse cx="52" cy="38" rx="10" ry="12" fill="#FFDBAC" stroke="#000" stroke-width="1">
+    <animate attributeName="cx" values="52;54;52" dur="0.6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Борода -->
+  <path d="M 46 42 Q 52 48 58 42" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" fill="none">
+    <animate attributeName="d" 
+             dur="0.6s" 
+             repeatCount="indefinite"
+             values="M 46 42 Q 52 48 58 42;
+                     M 48 42 Q 54 47 60 42;
+                     M 46 42 Q 52 48 58 42"/>
+  </path>
+
+  <!-- Шапка -->
+  <rect x="44" y="24" width="14" height="6" fill="#C62828" stroke="#000" stroke-width="0.5">
+    <animate attributeName="x" values="44;46;44" dur="0.6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Лицо (сосредоточенное) -->
+  <line x1="47" y1="36" x2="50" y2="36" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="53" y1="36" x2="56" y2="36" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <path d="M 47 34 L 49 32" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 55 34 L 53 32" stroke="#5D4037" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <path d="M 48 42 Q 51 43 54 42" stroke="#5D4037" stroke-width="1" fill="none"/>
+
+  <!-- Руки в беге (зеркально) -->
+  <!-- Левая рука (сзади) -->
+  <path d="M 32 60 L 20 50 L 18 55 L 30 65 Z" fill="url(#runLeftBody)" stroke="#000" stroke-width="1">
+    <animate attributeName="d" 
+             dur="0.6s" 
+             repeatCount="indefinite"
+             values="M 32 60 L 20 50 L 18 55 L 30 65 Z;
+                     M 34 58 L 22 48 L 20 53 L 32 63 Z;
+                     M 32 60 L 20 50 L 18 55 L 30 65 Z"/>
+  </path>
+
+  <!-- Правая рука (впереди) -->
+  <path d="M 58 55 L 68 65 L 70 70 L 60 60 Z" fill="url(#runLeftBody)" stroke="#000" stroke-width="1">
+    <animate attributeName="d" 
+             dur="0.6s" 
+             repeatCount="indefinite"
+             values="M 58 55 L 68 65 L 70 70 L 60 60 Z;
+                     M 60 53 L 70 63 L 72 68 L 62 58 Z;
+                     M 58 55 L 68 65 L 70 70 L 60 60 Z"/>
+  </path>
+
+  <!-- Ноги в беге (зеркально) -->
+  <!-- Опорная нога (левая) -->
+  <path d="M 48 105 L 42 130 L 46 132 L 52 107 Z" fill="#2C3E50" stroke="#000" stroke-width="1">
+    <animate attributeName="d" 
+             dur="0.3s" 
+             repeatCount="indefinite"
+             values="M 48 105 L 42 130 L 46 132 L 52 107 Z;
+                     M 50 103 L 44 128 L 48 130 L 54 105 Z;
+                     M 48 105 L 42 130 L 46 132 L 52 107 Z"/>
+  </path>
+
+  <!-- Замахивающаяся нога (правая) -->
+  <path d="M 58 100 L 62 120 L 66 118 L 60 98 Z" fill="#2C3E50" stroke="#000" stroke-width="1">
+    <animate attributeName="d" 
+             dur="0.6s" 
+             repeatCount="indefinite"
+             values="M 58 100 L 62 120 L 66 118 L 60 98 Z;
+                     M 56 95 L 60 115 L 64 113 L 58 93 Z;
+                     M 54 100 L 58 120 L 62 118 L 56 98 Z;
+                     M 58 100 L 62 120 L 66 118 L 60 98 Z"/>
+  </path>
+
+  <!-- Оберег -->
+  <circle cx="52" cy="72" r="4" fill="none" stroke="#FFD700" stroke-width="1">
+    <animate attributeName="cx" values="52;54;52" dur="0.6s" repeatCount="indefinite"/>
+  </circle>
+
+</svg>
