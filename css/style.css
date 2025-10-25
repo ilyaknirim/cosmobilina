@@ -1,23 +1,41 @@
-/* Импорт шрифта Russo One */
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/* Импорт шрифтов для славянского космопанка */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik+Distressed&display=swap');
 
 /* Глобальные стили и переменные - Славянский космопанк */
 :root {
-    --primary-color: #9D2933; /* Красный славянский */
+    /* Славянские цвета */
+    --primary-color: #8B0000; /* Темно-красный (славянский багрянец) */
     --secondary-color: #2A5CAA; /* Синий космический */
-    --accent-color: #FFD700; /* Золотой */
-    --accent-color-2: #E94B3C; /* Ярко-красный */
-    --accent-color-3: #C73E1D; /* Глубокий красный */
-    --accent-color-4: #4A6FA5; /* Светлый космический синий */
+    --accent-color: #FFD700; /* Золотой (славянское золото) */
+    --accent-color-2: #CD5C5C; /* Индийский красный */
+    --accent-color-3: #B22222; /* Огненный кирпич */
+    --accent-color-4: #4169E1; /* Королевский синий */
+    --accent-color-5: #8A2BE2; /* Синий фиолетовый (космический) */
+    
+    /* Космические цвета */
+    --cosmic-purple: #483D8B; /* Темный сине-фиолетовый */
+    --cosmic-blue: #191970; /* Полуночно-синий */
+    --cosmic-teal: #008080; /* Чайный */
+    
+    /* Текст и фон */
     --text-color: #F8F0E3; /* Слегка желтоватый белый */
     --text-glow: rgba(255, 215, 0, 0.7); /* Свечение текста */
+    --text-shadow: rgba(139, 0, 0, 0.8); /* Тень текста */
+    
+    /* Градиенты фона */
     --bg-dark: #0A0E1A; /* Темный космос */
     --bg-medium: #1A1F3A; /* Средний космос */
     --bg-light: #2A3050; /* Светлый космос */
+    
+    /* Эффекты */
     --transition-speed: 0.4s;
     --border-radius: 8px;
     --glow-intensity: 0 0 20px;
+    --pulse-intensity: 0 0 30px;
+    
+    /* Шрифты */
     --font-family: "Russo One", "Arial Black", sans-serif;
+    --font-family-accent: "Rubik Distressed", cursive;
 }
 
 /* Базовые стили */
@@ -45,8 +63,9 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(157, 41, 51, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(42, 92, 170, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, var(--cosmic-purple) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--cosmic-blue) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
     animation: cosmicPulse 20s ease-in-out infinite;
     z-index: -2;
 }
@@ -65,12 +84,15 @@ body::after {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 50% 70%, rgba(255, 215, 0, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 10%, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+        radial-gradient(circle at 10% 20%, var(--accent-color) 1px, transparent 1px),
+        radial-gradient(circle at 50% 70%, var(--accent-color-4) 1px, transparent 1px),
+        radial-gradient(circle at 80% 10%, var(--accent-color-5) 1px, transparent 1px),
+        radial-gradient(circle at 30% 40%, var(--cosmic-teal) 1px, transparent 1px),
+        radial-gradient(circle at 70% 80%, var(--accent-color) 1px, transparent 1px);
     background-size: 200px 200px;
     z-index: -1;
     animation: starsMove 120s linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes starsMove {
@@ -161,7 +183,8 @@ body::after {
     text-shadow: 
         0 0 15px var(--text-glow),
         0 0 25px var(--accent-color),
-        0 0 35px var(--accent-color-2);
+        0 0 35px var(--accent-color-2),
+        0 0 45px var(--text-shadow);
     color: var(--accent-color);
     letter-spacing: 3px;
     font-weight: bold;
@@ -171,7 +194,12 @@ body::after {
     text-align: center;
     line-height: 1.2;
     animation: titlePulse 4s ease-in-out infinite;
-    font-family: var(--font-family);
+    font-family: var(--font-family-accent);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-2), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px var(--text-glow));
 }
 
 #startScreen h1::before {
@@ -182,6 +210,7 @@ body::after {
     transform: translateY(-50%);
     font-size: 0.8em;
     color: var(--accent-color);
+    text-shadow: var(--glow-intensity) var(--accent-color);
     animation: cometFloat 8s ease-in-out infinite;
 }
 
@@ -193,6 +222,7 @@ body::after {
     transform: translateY(-50%);
     font-size: 0.8em;
     color: var(--accent-color);
+    text-shadow: var(--glow-intensity) var(--accent-color);
     animation: cometFloat 8s ease-in-out infinite reverse;
 }
 
@@ -218,6 +248,11 @@ body::after {
     font-family: var(--font-family);
     position: relative;
     display: inline-block;
+    background: linear-gradient(90deg, var(--accent-color-4), var(--accent-color-5));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px var(--accent-color-4));
 }
 
 .subtitle::after {
@@ -227,7 +262,7 @@ body::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent-color), var(--accent-color-5), transparent);
     animation: lineGlow 3s ease-in-out infinite;
 }
 
@@ -313,18 +348,32 @@ body::after {
 /* Основная кнопка */
 .btn-primary {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 0 20px rgba(157, 41, 51, 0.5);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
     border: 2px solid var(--accent-color);
     min-width: 200px;
     position: relative;
     overflow: hidden;
+    font-family: var(--font-family-accent);
+}
+
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color), transparent, var(--accent-color));
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .btn-primary:hover {
-    transform: translateY(-5px) rotateX(10deg);
-    box-shadow: 0 10px 25px rgba(157, 41, 51, 0.7), var(--glow-intensity) var(--accent-color);
-    background: linear-gradient(45deg, var(--accent-color-2), var(--secondary-color));
+    transform: translateY(-5px) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.7), var(--glow-intensity) var(--accent-color), var(--pulse-intensity) var(--accent-color-2);
+    background: linear-gradient(45deg, var(--accent-color-2), var(--secondary-color), var(--accent-color-5));
     animation: buttonGlow 2s ease-in-out infinite;
+    border-color: var(--accent-color-2);
 }
 
 @keyframes buttonGlow {
@@ -339,13 +388,28 @@ body::after {
     color: var(--accent-color);
     position: relative;
     overflow: hidden;
+    font-family: var(--font-family);
+}
+
+.btn-secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color-4), transparent, var(--accent-color-5));
+    opacity: 0.2;
+    z-index: -1;
 }
 
 .btn-secondary:hover {
     background: rgba(255, 215, 0, 0.2);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    transform: translateY(-3px) rotateX(5deg);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), var(--glow-intensity) var(--accent-color-4);
+    transform: translateY(-3px) rotateX(5deg) scale(1.02);
     animation: buttonFloat 3s ease-in-out infinite;
+    color: var(--accent-color-5);
+    border-color: var(--accent-color-5);
 }
 
 @keyframes buttonFloat {
@@ -363,6 +427,39 @@ body::after {
     margin: 30px 0;
     perspective: 1000px;
     transform-style: preserve-3d;
+    position: relative;
+    padding: 20px;
+}
+
+/* Славянский орнамент для меню */
+.menu::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='30' viewBox='0 0 100 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q25,5 50,15 T100,15' stroke='var(--accent-color)' fill='none' stroke-width='2'/%3E%3Cpath d='M0,10 Q25,0 50,10 T100,10' stroke='var(--accent-color-4)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0,20 Q25,10 50,20 T100,20' stroke='var(--accent-color-4)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 100px 30px;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.menu::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='30' viewBox='0 0 100 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q25,25 50,15 T100,15' stroke='var(--accent-color)' fill='none' stroke-width='2'/%3E%3Cpath d='M0,10 Q25,20 50,10 T100,10' stroke='var(--accent-color-4)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M0,20 Q25,30 50,20 T100,20' stroke='var(--accent-color-4)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 100px 30px;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+    z-index: -1;
 }
 
 .menuBtn {
@@ -380,6 +477,30 @@ body::after {
     overflow: hidden;
     font-family: var(--font-family);
     transform-style: preserve-3d;
+}
+
+/* Славянские символы для кнопок */
+.menuBtn:nth-child(1)::after { content: "☦"; }
+.menuBtn:nth-child(2)::after { content: "☪"; }
+.menuBtn:nth-child(3)::after { content: "☥"; }
+.menuBtn:nth-child(4)::after { content: "✧"; }
+.menuBtn:nth-child(5)::after { content: "✦"; }
+.menuBtn:nth-child(6)::after { content: "✩"; }
+
+.menuBtn::after {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.7em;
+    color: var(--accent-color);
+    opacity: 0.7;
+    transition: all var(--transition-speed) ease;
+}
+
+.menuBtn:hover::after {
+    color: var(--accent-color-5);
+    opacity: 1;
+    transform: rotate(360deg) scale(1.2);
 }
 
 /* Эффект волны при наведении */
@@ -421,9 +542,12 @@ body::after {
 /* Эффект при наведении */
 .menuBtn:hover {
     background: rgba(255, 215, 0, 0.2);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), var(--glow-intensity) var(--accent-color-4);
+    transform: translateY(-5px) rotateX(5deg) rotateY(5deg) scale(1.03);
     animation: menuBtnFloat 4s ease-in-out infinite;
+    color: var(--accent-color-5);
+    border-color: var(--accent-color-5);
+    font-family: var(--font-family-accent);
 }
 
 @keyframes menuBtnFloat {
