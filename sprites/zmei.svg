@@ -1,0 +1,14 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тело из обломков -->
+  <rect x="40" y="50" width="70" height="20" fill="#546E7A" stroke="#000"/>
+  <!-- Головы-модули -->
+  <!-- Плазмомёт -->
+  <circle cx="30" cy="40" r="12" fill="#455A64"/>
+  <rect x="18" y="38" width="8" height="4" fill="#FF6D00"/>
+  <!-- Рейловушка -->
+  <circle cx="60" cy="30" r="10" fill="#455A64"/>
+  <rect x="50" y="28" width="8" height="4" fill="#4FC3F7"/>
+  <!-- Ракетная установка -->
+  <circle cx="90" cy="35" r="8" fill="#455A64"/>
+  <rect x="82" y="33" width="8" height="4" fill="#FFD600"/>
+</svg>

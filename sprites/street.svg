@@ -1,0 +1,60 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="cobblestone" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#37474F"/>
+      <circle cx="20" cy="20" r="8" fill="#455A64"/>
+    </pattern>
+    <linearGradient id="skyGrad">
+      <stop offset="0%" stop-color="#8B0000"/>
+      <stop offset="50%" stop-color="#B71C1C"/>
+      <stop offset="100%" stop-color="#D32F2F"/>
+    </linearGradient>
+    <radialGradient id="fireGrad">
+      <stop offset="0%" stop-color="#FFD600"/>
+      <stop offset="50%" stop-color="#FF6D00"/>
+      <stop offset="100%" stop-color="#DD2C00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Небо -->
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- Улица -->
+  <polygon points="100,500 700,500 750,400 150,400" fill="url(#cobblestone)" stroke="#263238" stroke-width="2"/>
+  
+  <!-- Левое здание -->
+  <polygon points="150,400 300,400 280,250 130,250" fill="#8B4513" stroke="#000" stroke-width="2"/>
+  <!-- Окна -->
+  <polygon points="170,350 220,350 215,300 165,300" fill="#4FC3F7" opacity="0.4" stroke="#4FC3F7" stroke-width="1"/>
+  <polygon points="230,350 280,350 275,300 225,300" fill="#4FC3F7" opacity="0.4" stroke="#4FC3F7" stroke-width="1"/>
+  <!-- Неоновая вывеска -->
+  <polygon points="160,270 270,270 265,240 155,240" fill="#1A237E" stroke="#4FC3F7" stroke-width="1"/>
+  <text x="180" y="260" font-family="Arial" font-size="12" fill="#4FC3F7">★ ЧАРОДЕЙ ★</text>
+  
+  <!-- Правое здание -->
+  <polygon points="500,400 650,400 630,200 480,200" fill="#5D2906" stroke="#000" stroke-width="2"/>
+  <!-- Голографический купол -->
+  <ellipse cx="565" cy="180" rx="40" ry="20" fill="#4FC3F7" opacity="0.2" stroke="#4FC3F7" stroke-width="1"/>
+  
+  <!-- Горящие обломки -->
+  <polygon points="350,450 450,450 440,420 360,420" fill="#546E7A" stroke="#000" stroke-width="1"/>
+  <!-- Огонь -->
+  <path d="M 380 420 Q 400 380 420 420 Q 440 380 460 420" fill="url(#fireGrad)" opacity="0.7"/>
+  
+  <!-- Обвалившийся мост -->
+  <polygon points="400,400 450,400 460,380 410,380" fill="#37474F" stroke="#000" stroke-width="1"/>
+  <polygon points="450,400 500,400 510,380 460,380" fill="#5D2906" stroke="#000" stroke-width="1"/>
+  <path d="M 460 380 L 470 360" stroke="#5D2906" stroke-width="3" fill="none"/>
+  
+  <!-- Парящие голограммы древних богов -->
+  <ellipse cx="600" cy="100" rx="25" ry="15" fill="#4FC3F7" opacity="0.1" stroke="#4FC3F7" stroke-width="0.5"/>
+  <circle cx="600" cy="100" r="8" fill="#FFD700" opacity="0.5"/>
+  
+  <!-- Энергетические разряды -->
+  <path d="M 200 150 Q 250 120 300 170" stroke="#4FC3F7" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <path d="M 500 120 Q 550 90 600 140" stroke="#E53935" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  
+  <!-- Дым -->
+  <ellipse cx="400" cy="150" rx="30" ry="20" fill="#78909C" opacity="0.4"/>
+  <ellipse cx="420" cy="130" rx="25" ry="15" fill="#78909C" opacity="0.3"/>
+</svg>

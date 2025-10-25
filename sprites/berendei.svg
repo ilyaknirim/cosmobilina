@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тело из дерева и металла -->
+  <path d="M 50 20 L 60 50 L 50 70 L 40 50 Z" fill="#5D4037" stroke="#000"/>
+  <!-- Металлические пластины -->
+  <rect x="47" y="30" width="6" height="15" fill="#78909C"/>
+  <rect x="45" y="45" width="10" height="5" fill="#546E7A"/>
+  <!-- Голова-маска -->
+  <circle cx="50" cy="25" r="6" fill="#388E3C"/>
+  <!-- Глаза -->
+  <circle cx="48" cy="23" r="1" fill="#4FC3F7"/>
+  <circle cx="52" cy="23" r="1" fill="#4FC3F7"/>
+  <!-- Рога-антенны -->
+  <path d="M 48 19 L 45 10 L 47 12" fill="#5D4037"/>
+  <path d="M 52 19 L 55 10 L 53 12" fill="#5D4037"/>
+</svg>

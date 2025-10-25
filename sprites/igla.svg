@@ -1,0 +1,17 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Станция -->
+  <rect x="65" y="10" width="20" height="80" fill="#546E7A" stroke="#000"/>
+  <!-- Кристаллические структуры -->
+  <polygon points="65,10 45,30 65,30" fill="#78909C"/>
+  <polygon points="85,10 105,30 85,30" fill="#78909C"/>
+  <!-- Серверные блоки -->
+  <rect x="68" y="15" width="14" height="5" fill="#37474F"/>
+  <rect x="68" y="25" width="14" height="5" fill="#37474F"/>
+  <rect x="68" y="35" width="14" height="5" fill="#37474F"/>
+  <!-- Антенны -->
+  <line x1="75" y1="10" x2="75" y2="5" stroke="#78909C" stroke-width="2"/>
+  <line x1="70" y1="8" x2="65" y2="3" stroke="#78909C" stroke-width="1"/>
+  <line x1="80" y1="8" x2="85" y2="3" stroke="#78909C" stroke-width="1"/>
+  <!-- Энергия -->
+  <circle cx="75" cy="75" r="8" fill="none" stroke="#00E676" stroke-width="1" stroke-dasharray="2,2"/>
+</svg>

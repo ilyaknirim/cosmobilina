@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тело -->
+  <ellipse cx="50" cy="60" rx="15" ry="10" fill="#78909C"/>
+  <!-- Голова -->
+  <circle cx="50" cy="45" r="8" fill="#546E7A"/>
+  <!-- Клюв-излучатель -->
+  <rect x="48" y="37" width="4" height="10" fill="#FF6D00"/>
+  <!-- Глаза-камеры -->
+  <circle cx="47" cy="43" r="1.5" fill="#00E676"/>
+  <circle cx="53" cy="43" r="1.5" fill="#00E676"/>
+  <!-- Крылья-рупоры -->
+  <ellipse cx="35" cy="55" rx="8" ry="5" fill="#455A64"/>
+  <ellipse cx="65" cy="55" rx="8" ry="5" fill="#455A64"/>
+  <!-- Звуковые волны -->
+  <circle cx="50" cy="45" r="12" fill="none" stroke="#FF6D00" stroke-dasharray="2,2"/>
+  <circle cx="50" cy="45" r="18" fill="none" stroke="#FF6D00" stroke-dasharray="2,2" opacity="0.5"/>
+</svg>

@@ -1,0 +1,56 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="metalWall" patternUnits="userSpaceOnUse" width="50" height="50">
+      <rect width="50" height="50" fill="#2C3E50"/>
+      <path d="M 0 0 L 50 50 M 50 0 L 0 50" stroke="#34495E" stroke-width="2"/>
+    </pattern>
+    <pattern id="circuit" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#1A252F"/>
+      <circle cx="10" cy="10" r="2" fill="#4FC3F7" opacity="0.3"/>
+      <path d="M 0 10 L 20 10 M 10 0 L 10 20" stroke="#4FC3F7" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34495E"/>
+      <stop offset="100%" stop-color="#2C3E50"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Пол -->
+  <polygon points="200,400 600,400 700,300 300,300" fill="url(#floorGrad)" stroke="#1A252F" stroke-width="2"/>
+  
+  <!-- Задняя стена -->
+  <polygon points="300,300 700,300 650,200 350,200" fill="url(#metalWall)" stroke="#1A252F" stroke-width="2"/>
+  
+  <!-- Боковая стена -->
+  <polygon points="200,400 300,300 350,200 250,300" fill="url(#circuit)" stroke="#1A252F" stroke-width="2"/>
+  
+  <!-- Кровать-койка -->
+  <polygon points="250,350 400,350 420,320 270,320" fill="#5D2906" stroke="#000" stroke-width="1"/>
+  <polygon points="250,350 270,320 270,280 250,310" fill="#8B4513" stroke="#000" stroke-width="1"/>
+  
+  <!-- Стол с голограммами -->
+  <polygon points="450,350 550,350 560,330 460,330" fill="#37474F" stroke="#000" stroke-width="1"/>
+  <!-- Голограмма Щуки -->
+  <polygon points="470,320 540,320 530,280 480,280" fill="#4FC3F7" opacity="0.3" stroke="#4FC3F7" stroke-width="1"/>
+  <ellipse cx="505" cy="300" rx="15" ry="8" fill="#4FC3F7" opacity="0.2"/>
+  
+  <!-- Треснувшая стена -->
+  <polygon points="650,250 750,250 740,180 640,180" fill="url(#metalWall)" stroke="#000" stroke-width="1"/>
+  <path d="M 660 200 L 730 190 L 720 220" stroke="#E53935" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 670 210 L 690 185" stroke="#E53935" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Древние иконы с неоновой подсветкой -->
+  <polygon points="320,220 380,220 370,180 330,180" fill="#1A237E" stroke="#4FC3F7" stroke-width="1"/>
+  <circle cx="350" cy="200" r="8" fill="#FFD700" stroke="#000" stroke-width="0.5"/>
+  
+  <!-- Аварийное освещение -->
+  <circle cx="280" cy="250" r="5" fill="#E53935"/>
+  <circle cx="280" cy="250" r="8" fill="#E53935" opacity="0.3"/>
+  
+  <!-- Обломки -->
+  <polygon points="500,380 530,380 520,360 490,360" fill="#546E7A" stroke="#000" stroke-width="1"/>
+  <polygon points="580,370 600,370 595,355 575,355" fill="#78909C" stroke="#000" stroke-width="1"/>
+  
+  <!-- Провода -->
+  <path d="M 650 280 Q 620 300 600 320 L 580 340" stroke="#FFD600" stroke-width="2" fill="none" stroke-dasharray="3,2"/>
+</svg>

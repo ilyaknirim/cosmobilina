@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+#startScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0.2"/></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23grad)"/></svg>') no-repeat center center;
+    background-size: cover;
+}
+
+#startScreen h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #ff6b6b, 0 0 40px #4ecdc4;
+    color: #ffd700;
+}
+
+#startGameBtn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+    transition: all 0.3s ease;
+}
+
+#startGameBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.8);
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffd700;
+    padding: 10px 20px;
+    color: #ffd700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menuBtn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+#loreScreen {
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#backBtn {
+    background: #333;
+    border: 1px solid #666;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#loreContent {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#gameUI {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+#pauseBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffd700;
+    padding: 10px 20px;
+    color: #ffd700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#pauseBtn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+#gameCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}

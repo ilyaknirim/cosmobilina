@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="vortex">
+      <stop offset="0%" stop-color="#7B1FA2"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </radialGradient>
+  </defs>
+  <!-- Воронка аномалии -->
+  <path d="M 30 30 Q 50 50 70 30 Q 50 70 30 30" fill="url(#vortex)" opacity="0.7" stroke="#4A148C" stroke-width="1"/>
+  <!-- Искажения пространства -->
+  <path d="M 40 40 L 45 35 L 60 55 L 55 60 Z" fill="none" stroke="#E1BEE7" stroke-width="0.7"/>
+  <circle cx="50" cy="45" r="5" fill="none" stroke="#E1BEE7" stroke-width="0.7" stroke-dasharray="1,1"/>
+  <!-- Частицы энергии -->
+  <circle cx="35" cy="40" r="1.5" fill="#E1BEE7"/>
+  <circle cx="60" cy="50" r="1" fill="#E1BEE7"/>
+  <circle cx="45" cy="60" r="1.2" fill="#E1BEE7"/>
+</svg>

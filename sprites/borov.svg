@@ -1,0 +1,16 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Астероид -->
+  <ellipse cx="75" cy="50" rx="40" ry="30" fill="#5D4037" stroke="#000"/>
+  <!-- Лес -->
+  <path d="M 45 40 L 40 20 L 50 25" fill="#388E3C"/>
+  <path d="M 60 35 L 55 15 L 65 20" fill="#2E7D32"/>
+  <path d="M 75 30 L 70 10 L 80 15" fill="#388E3C"/>
+  <path d="M 90 35 L 85 15 L 95 20" fill="#2E7D32"/>
+  <path d="M 105 40 L 100 20 L 110 25" fill="#388E3C"/>
+  <!-- Грибы-фонари -->
+  <circle cx="50" cy="60" r="3" fill="#FFD600"/>
+  <circle cx="80" cy="65" r="2" fill="#FFD600"/>
+  <circle cx="100" cy="55" r="2.5" fill="#FFD600"/>
+  <!-- Река -->
+  <path d="M 30 70 Q 50 65 70 75 Q 90 80 110 70" fill="none" stroke="#4FC3F7" stroke-width="2"/>
+</svg>

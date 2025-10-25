@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="robe">
+      <stop offset="0%" stop-color="#6A1B9A"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Одежда -->
+  <path d="M 40 30 L 60 30 L 65 70 L 35 70 Z" fill="url(#robe)" stroke="#000"/>
+  <!-- Голова -->
+  <circle cx="50" cy="25" r="7" fill="#FFDBAC" stroke="#000"/>
+  <!-- Коса -->
+  <path d="M 50 32 L 53 45 L 50 60 L 47 45 Z" fill="#5D4037"/>
+  <!-- Голографический интерфейс -->
+  <rect x="55" y="35" width="20" height="15" fill="#E1F5FE" opacity="0.8" stroke="#4FC3F7"/>
+  <circle cx="60" cy="40" r="1" fill="#4FC3F7"/>
+  <rect x="63" cy="39" width="8" height="2" fill="#4FC3F7"/>
+  <!-- Техно-посох -->
+  <rect x="35" y="40" width="3" height="25" fill="#78909C"/>
+  <circle cx="36.5" cy="38" r="4" fill="#4FC3F7"/>
+</svg>

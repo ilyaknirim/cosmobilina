@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Призрачная форма -->
+  <ellipse cx="50" cy="50" rx="15" ry="25" fill="#78909C" opacity="0.6" stroke="#37474F"/>
+  <!-- "Лицо" -->
+  <circle cx="50" cy="40" r="8" fill="#CFD8DC" opacity="0.8"/>
+  <!-- Глаза-сенсоры -->
+  <circle cx="47" cy="38" r="2" fill="#00E676"/>
+  <circle cx="53" cy="38" r="2" fill="#00E676"/>
+  <!-- Данные -->
+  <path d="M 45 55 L 40 65 L 35 60" fill="none" stroke="#00E676" stroke-width="1.5"/>
+  <path d="M 50 55 L 50 70 L 45 75" fill="none" stroke="#00E676" stroke-width="1.5"/>
+  <path d="M 55 55 L 60 65 L 65 60" fill="none" stroke="#00E676" stroke-width="1.5"/>
+  <!-- Ядро -->
+  <circle cx="50" cy="50" r="3" fill="#FF4081"/>
+</svg>

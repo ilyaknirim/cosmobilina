@@ -1,0 +1,16 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Космос -->
+  <rect width="150" height="100" fill="#0D1B2A"/>
+  <!-- Обломки -->
+  <rect x="20" y="30" width="15" height="10" fill="#546E7A" transform="rotate(45 20 30)"/>
+  <rect x="60" y="50" width="20" height="8" fill="#78909C" transform="rotate(30 60 50)"/>
+  <polygon points="100,20 115,25 110,35" fill="#37474F"/>
+  <circle cx="40" cy="70" r="8" fill="#455A64"/>
+  <!-- Звёзды -->
+  <circle cx="15" cy="20" r="0.8" fill="#FFF"/>
+  <circle cx="130" cy="30" r="0.5" fill="#FFF"/>
+  <circle cx="80" cy="15" r="0.7" fill="#FFF"/>
+  <circle cx="25" cy="85" r="0.6" fill="#FFF"/>
+  <!-- Туманность -->
+  <ellipse cx="120" cy="80" rx="20" ry="10" fill="#7B1FA2" opacity="0.3"/>
+</svg>

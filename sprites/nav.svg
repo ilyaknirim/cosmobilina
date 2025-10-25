@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Искажённое тело -->
+  <path d="M 50 30 Q 60 50 45 70 Q 30 50 50 30" fill="#78909C" opacity="0.7" stroke="#000" stroke-width="1"/>
+  <!-- Кибернетическая рука -->
+  <rect x="55" y="45" width="15" height="5" rx="2" fill="#37474F"/>
+  <!-- Голова-череп -->
+  <circle cx="50" cy="25" r="7" fill="#FFF" stroke="#000" stroke-width="1"/>
+  <!-- Глазницы -->
+  <circle cx="47" cy="23" r="1.5" fill="#000"/>
+  <circle cx="53" cy="23" r="1.5" fill="#000"/>
+  <!-- Самодельное оружие -->
+  <path d="M 70 45 L 85 40 L 83 50 Z" fill="#5D2906"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="webGlow">
+      <stop offset="0%" stop-color="#4FC3F7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#01579B" stop-opacity="0.1"/>
+    </radialGradient>
+  </defs>
+  <!-- Центр паутины -->
+  <circle cx="50" cy="50" r="10" fill="url(#webGlow)" stroke="#4FC3F7" stroke-width="0.5"/>
+  <!-- Лучи паутины -->
+  <line x1="50" y1="50" x2="20" y2="30" stroke="#4FC3F7" stroke-width="1"/>
+  <line x1="50" y1="50" x2="80" y2="30" stroke="#4FC3F7" stroke-width="1"/>
+  <line x1="50" y1="50" x2="85" y2="60" stroke="#4FC3F7" stroke-width="1"/>
+  <line x1="50" y1="50" x2="75" y2="80" stroke="#4FC3F7" stroke-width="1"/>
+  <line x1="50" y1="50" x2="40" y2="85" stroke="#4FC3F7" stroke-width="1"/>
+  <line x1="50" y1="50" x2="15" y2="65" stroke="#4FC3F7" stroke-width="1"/>
+  <!-- Круги паутины -->
+  <circle cx="50" cy="50" r="20" fill="none" stroke="#4FC3F7" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#4FC3F7" stroke-width="0.5" stroke-dasharray="2,2"/>
+</svg>

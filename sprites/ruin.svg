@@ -1,0 +1,18 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ледяная поверхность -->
+  <rect width="150" height="100" fill="#E1F5FE"/>
+  <!-- Руины -->
+  <rect x="30" y="40" width="40" height="30" fill="#B0BEC5" stroke="#000"/>
+  <rect x="40" y="30" width="20" height="10" fill="#90A4AE" stroke="#000"/>
+  <!-- Обломки -->
+  <rect x="80" y="50" width="15" height="10" fill="#CFD8DC" transform="rotate(20 80 50)"/>
+  <rect x="100" y="60" width="20" height="8" fill="#B0BEC5" transform="rotate(-15 100 60)"/>
+  <!-- Криокапсулы -->
+  <ellipse cx="50" cy="75" rx="8" ry="5" fill="#4FC3F7" opacity="0.7"/>
+  <ellipse cx="70" cy="75" rx="8" ry="5" fill="#4FC3F7" opacity="0.7"/>
+  <!-- Снег -->
+  <circle cx="20" cy="20" r="1.5" fill="#FFF"/>
+  <circle cx="40" cy="15" r="1" fill="#FFF"/>
+  <circle cx="130" cy="25" r="1.2" fill="#FFF"/>
+  <circle cx="110" cy="10" r="0.8" fill="#FFF"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="300" height="200" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Внешний купол -->
+  <circle cx="75" cy="50" r="45" fill="none" stroke="#4FC3F7" stroke-width="2"/>
+  <!-- Внутренний рай -->
+  <circle cx="75" cy="50" r="40" fill="#C8E6C9" stroke="#000"/>
+  <!-- Река -->
+  <path d="M 20 50 Q 40 60 60 55 Q 80 50 100 55 Q 120 60 130 50" fill="none" stroke="#4FC3F7" stroke-width="3"/>
+  <!-- Деревья -->
+  <path d="M 40 60 L 35 40 L 45 45" fill="#2E7D32"/>
+  <path d="M 60 55 L 55 35 L 65 40" fill="#388E3C"/>
+  <path d="M 90 55 L 85 35 L 95 40" fill="#2E7D32"/>
+  <path d="M 110 60 L 105 40 L 115 45" fill="#388E3C"/>
+  <!-- Город -->
+  <rect x="50" y="65" width="5" height="8" fill="#FFD700"/>
+  <rect x="60" y="62" width="6" height="11" fill="#FFD700"/>
+  <rect x="70" y="65" width="5" height="8" fill="#FFD700"/>
+  <rect x="80" y="60" width="7" height="13" fill="#FFD700"/>
+  <!-- Солнце -->
+  <circle cx="75" cy="30" r="8" fill="#FFD600"/>
+</svg>

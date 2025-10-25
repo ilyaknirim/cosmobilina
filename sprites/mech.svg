@@ -1,0 +1,20 @@
+<svg width="150" height="200" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blade">
+      <stop offset="0%" stop-color="#E0E0E0"/>
+      <stop offset="100%" stop-color="#BDBDBD"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Клинок -->
+  <rect x="35" y="10" width="10" height="80" fill="url(#blade)" stroke="#000"/>
+  <!-- Остриё -->
+  <polygon points="35,90 40,100 45,90" fill="url(#blade)" stroke="#000"/>
+  <!-- Энергетическая кромка -->
+  <rect x="35" y="10" width="10" height="80" fill="none" stroke="#4FC3F7" stroke-width="0.5"/>
+  <!-- Рукоять -->
+  <rect x="33" y="5" width="14" height="8" fill="#5D2906" stroke="#000"/>
+  <!-- Детали рукояти -->
+  <circle cx="40" cy="9" r="2" fill="#FFD700"/>
+  <rect x="37" y="2" width="6" height="2" fill="#5D2906"/>
+</svg>
