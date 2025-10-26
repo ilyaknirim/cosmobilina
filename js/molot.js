@@ -10,9 +10,10 @@ class Molot extends Entity {
         this.states = {
             HELD: 'held',
             FLYING: 'flying',
-            RETURNING: 'returning'
+            RETURNING: 'returning',
+            PEDESTAL: 'pedestal'  // Новое состояние - молот на постаменте
         };
-        this.currentState = this.states.HELD;
+        this.currentState = this.states.PEDESTAL; // Начинаем с состояния на постаменте
         this.offset = { x: 40, y: 10 };
     }
 
@@ -33,6 +34,9 @@ class Molot extends Entity {
                 break;
             case this.states.RETURNING:
                 this.updateReturn();
+                break;
+            case this.states.PEDESTAL:
+                // Молот на постаменте - не двигается
                 break;
         }
     }
