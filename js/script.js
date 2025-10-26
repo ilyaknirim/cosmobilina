@@ -1,13 +1,19 @@
 const startScreen = document.getElementById('startScreen');
 const loreScreen = document.getElementById('loreScreen');
+const gameContainer = document.getElementById('gameContainer');
+const keliaContainer = document.getElementById('keliaContainer');
 const gameCanvas = document.getElementById('gameCanvas');
 const ctx = gameCanvas.getContext('2d');
 const gameUI = document.getElementById('gameUI');
+
+console.log("DOM elements loaded:", startScreen, loreScreen, gameCanvas, ctx, gameUI);
 
 const startGameBtn = document.getElementById('startGameBtn');
 const backBtn = document.getElementById('backBtn');
 const loreContent = document.getElementById('loreContent');
 const pauseBtn = document.getElementById('pauseBtn');
+
+console.log("Buttons found:", startGameBtn, backBtn, pauseBtn, loreContent);
 
 let isPaused = false;
 let gameLoopId;
@@ -15,19 +21,34 @@ let gameInitialized = false;
 let character, molot;
 let currentLevel;
 
-function gameLoop() {
-    update();
+let lastTime = 0;
+
+function gameLoop(timestamp) {
+    if (!timestamp) timestamp = 0; // Первый вызов без параметра
+    const deltaTime = timestamp - lastTime;
+    lastTime = timestamp;
+    
+    console.log("Game loop started, timestamp:", timestamp, "deltaTime:", deltaTime);
+    update(deltaTime);
     draw();
     gameLoopId = requestAnimationFrame(gameLoop);
+    
+    // Отладочная информация
+    if (Math.random() < 0.01) { // Выводим лог не каждый кадр
+        console.log("Game loop running, deltaTime:", deltaTime);
+    }
 }
 
-function update() {
-    character.update();
-    molot.update();
-    currentLevel.update();
+function update(deltaTime) {
+    character.update(deltaTime);
+    molot.update(deltaTime);
+    currentLevel.update(deltaTime);
 }
 
 function draw() {
+    console.log("Draw function called");
+    console.log("Canvas dimensions:", gameCanvas.width, "x", gameCanvas.height);
+    console.log("Canvas display style:", gameCanvas.style.display);
     currentLevel.draw(ctx);
 }
 
@@ -113,12 +134,25 @@ const loreData = {
 };
 
 startGameBtn.addEventListener('click', () => {
+    console.log("Start button clicked");
     initAudio(); // Initialize audio on user interaction
+    console.log("Audio initialized");
     playSquareWave(440, 0.1, 0.05); // Play a short beep when starting
+    console.log("Playing beep sound");
     startScreen.style.display = 'none';
     loreScreen.style.display = 'none';
-    gameCanvas.style.display = 'block';
+    gameContainer.style.display = 'block';
     gameUI.style.display = 'block';
+    console.log("Elements displayed, canvas style:", gameCanvas.style.display);
+    console.log("Canvas dimensions:", gameCanvas.width, "x", gameCanvas.height);
+    
+    // Проверяем, что canvas действительно отображается
+    if (gameCanvas.width === 0 || gameCanvas.height === 0) {
+        console.error("Canvas has zero dimensions!");
+        gameCanvas.width = window.innerWidth;
+        gameCanvas.height = window.innerHeight;
+        console.log("Reset canvas dimensions to:", gameCanvas.width, "x", gameCanvas.height);
+    }
     startGameBtn.textContent = 'Продолжить игру';
     if (!gameInitialized) {
         initGame();
@@ -150,17 +184,39 @@ pauseBtn.addEventListener('click', () => {
         cancelAnimationFrame(gameLoopId);
         gameLoopId = null;
     }
-    gameCanvas.style.display = 'none';
+    gameContainer.style.display = 'none';
     gameUI.style.display = 'none';
     startScreen.style.display = 'flex';
+    
+    // Келья встроена в HTML, не нужно ее удалять
+    if (currentLevel) {
+        currentLevel.keliaElement = null;
+        console.log("Ссылка на келью удалена");
+    }
 });
 
 function initGame() {
+    console.log("Initializing game...");
     // Set canvas size to full window
     gameCanvas.width = window.innerWidth;
     gameCanvas.height = window.innerHeight;
+    
+    // Устанавливаем стили для правильного отображения холста
+    gameCanvas.style.width = '100%';
+    gameCanvas.style.height = '100%';
+    
+    console.log("Canvas size set to:", gameCanvas.width, "x", gameCanvas.height);
+    
     currentLevel = new Level1();
+    console.log("Level1 created");
     currentLevel.init();
+    console.log("Level initialized");
+    
+    // Получаем персонажа и молот из уровня
+    character = currentLevel.character;
+    molot = currentLevel.molot;
+    console.log("Character and molot assigned:", character, molot);
+    
     gameLoop();
 
     // Add mouse and touch event listeners for character control

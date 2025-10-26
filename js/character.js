@@ -1,9 +1,11 @@
 class Character extends Entity {
     constructor(x, y, width, height) {
+        console.log("Creating character at position:", x, y);
         super(x, y, width, height, 'sprites/character.svg');
         this.setupAnimation();
         this.setupPhysics();
         this.setupControls();
+        this.loadSprites();
     }
 
     setupAnimation() {
@@ -14,6 +16,19 @@ class Character extends Entity {
         };
         this.currentSprite = 'idle';
         this.loadSprites();
+    }
+    
+    loadSprites() {
+        // Загружаем все спрайты
+        for (const key in this.sprites) {
+            const sprite = new Image();
+            sprite.src = this.sprites[key];
+            sprite.loaded = false;
+            sprite.onload = () => {
+                sprite.loaded = true;
+            };
+            this.sprites[key] = sprite;
+        }
     }
 
     setupPhysics() {
@@ -65,5 +80,43 @@ class Character extends Entity {
         } else {
             this.currentSprite = 'idle';
         }
+    }
+    
+    handleMouseDown(event) {
+        this.isMouseDown = true;
+        const rect = gameCanvas.getBoundingClientRect();
+        this.mouseX = event.clientX - rect.left;
+        this.mouseY = event.clientY - rect.top;
+    }
+    
+    handleMouseUp() {
+        this.isMouseDown = false;
+    }
+    
+    handleMouseMove(event) {
+        if (this.isMouseDown) {
+            const rect = gameCanvas.getBoundingClientRect();
+            this.mouseX = event.clientX - rect.left;
+            this.mouseY = event.clientY - rect.top;
+        }
+    }
+    
+    handleTouchStart(touch) {
+        this.isMouseDown = true;
+        const rect = gameCanvas.getBoundingClientRect();
+        this.mouseX = touch.clientX - rect.left;
+        this.mouseY = touch.clientY - rect.top;
+    }
+    
+    handleTouchMove(touch) {
+        if (this.isMouseDown) {
+            const rect = gameCanvas.getBoundingClientRect();
+            this.mouseX = touch.clientX - rect.left;
+            this.mouseY = touch.clientY - rect.top;
+        }
+    }
+    
+    handleTouchEnd() {
+        this.isMouseDown = false;
     }
 }

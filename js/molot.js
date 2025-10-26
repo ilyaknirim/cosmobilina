@@ -1,5 +1,6 @@
 class Molot extends Entity {
     constructor(x, y, width, height, character) {
+        console.log("Creating molot at position:", x, y);
         super(x, y, width, height, 'sprites/molot.svg');
         this.character = character;
         this.setupStates();
@@ -60,5 +61,16 @@ class Molot extends Entity {
             this.velocity.y = (dy / distance) * this.speed;
             this.rotation += this.rotationSpeed;
         }
+    }
+    
+    updateReturn() {
+        // Возвращение молота к персонажу
+        this.followCharacter();
+    }
+    
+    followCharacter() {
+        // Следование за персонажем
+        this.x = this.character.x + this.character.width / 2 - this.width / 2 + this.offset.x;
+        this.y = this.character.y + this.character.height / 2 - this.height / 2 + this.offset.y;
     }
 }

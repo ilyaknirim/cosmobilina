@@ -3,8 +3,12 @@ let audioContext;
 
 // Initialize audio context on user interaction
 function initAudio() {
+    console.log("Initializing audio...");
     if (!audioContext) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        console.log("Audio context created:", audioContext);
+    } else {
+        console.log("Audio context already exists");
     }
 }
 
@@ -119,6 +123,7 @@ function playExplosion() {
 }
 
 function playBackgroundMelody() {
+    console.log("Playing background melody");
     // Cyberpunk fairy-tale melody using triangle waves
     const notes = [
         { freq: 440, dur: 0.5 }, // A4

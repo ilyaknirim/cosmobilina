@@ -1,39 +1,12 @@
 /* Material Design для Telegram Mini App в стиле славянского космопанка */
 @import url('fonts.css');
-
-:root {
-  --font-family: 'SHRIFT', serif;
-  --header-font: 'Kramola', serif;
-  /* Славянские космические цвета */
-  --primary: #8B0000;
-  --primary-light: #CD5C5C;
-  --primary-dark: #5C0000;
-  --secondary: #2A5CAA;
-  --secondary-light: #4A7CEA;
-  --accent: #D4AF37;
-  --accent-light: #F4CF57;
-
-  /* Material цвета */
-  --surface: #1E1E2E;
-  --surface-variant: #2A2A3E;
-  --background: #12121A;
-  --on-surface: #E0E0E0;
-  --on-primary: #FFFFFF;
-
-  /* Тени */
-  --shadow-1: 0 2px 4px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.28);
-  --shadow-2: 0 3px 6px rgba(0,0,0,0.23), 0 1px 2px rgba(0,0,0,0.31);
-  --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
-  /* Размеры */
-  --border-radius: 12px;
-  --border-radius-small: 8px;
-  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Шрифты */
+  --font-family: 'SHRIFT', serif;
+  --header-font: 'Kramola', serif;
+  
   /* Славянские космические цвета */
   --primary: #8B0000;
   --primary-light: #CD5C5C;
@@ -70,11 +43,20 @@
 body {
   background-color: var(--background);
   color: var(--on-surface);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-family), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   height: 100vh;
   overflow: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+#gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 /* Экраны */
@@ -164,11 +146,15 @@ h1 {
   max-width: 320px;
 }
 
-/* Кнопки в стиле славянского космопанка */
+/* Базовые стили для всех кнопок */
+button.btn,
 .btn {
-  background: linear-gradient(135deg, rgba(139, 0, 0, 0.8), rgba(42, 92, 170, 0.8));
-  color: var(--on-primary);
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 280px;
   padding: 14px 24px;
+  border: 2px solid var(--accent);
   border-radius: var(--border-radius);
   cursor: pointer;
   font-family: var(--font-family) !important;
@@ -176,18 +162,15 @@ h1 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: var(--transition);
-  width: 280px;
   text-align: center;
-  border: 2px solid var(--accent);
+  color: var(--on-primary);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.8), rgba(42, 92, 170, 0.8));
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-  position: relative;
   overflow: hidden;
-  display: block;
-  margin: 0 auto;
+  transition: var(--transition);
 }
 
-/* Эффект нажатия */
+/* Эффекты для кнопок */
 .btn::before {
   content: "";
   position: absolute;
@@ -199,6 +182,7 @@ h1 {
   background: rgba(255, 255, 255, 0.5);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
+  z-index: 1;
 }
 
 .btn:active::before {
@@ -236,6 +220,7 @@ h1 {
 }
 
 /* Вторичная кнопка */
+button.btn-secondary,
 .btn-secondary {
   background: linear-gradient(135deg, rgba(42, 92, 170, 0.9), rgba(72, 61, 139, 0.9));
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
@@ -257,7 +242,7 @@ h1 {
   margin: 20px auto;
 }
 
-/* Кнопки, выдвигающиеся слева */
+/* Анимации для кнопок меню */
 .punk-left {
   transform: translateX(-10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -268,7 +253,6 @@ h1 {
   box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5);
 }
 
-/* Кнопки, выдвигающиеся справа */
 .punk-right {
   transform: translateX(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -280,10 +264,14 @@ h1 {
 }
 
 /* Кнопки меню в стиле "ПАНК" */
+button.menuBtn,
 .menuBtn {
-  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
-  color: var(--on-primary);
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 280px;
   padding: 14px 16px;
+  border: 2px solid var(--accent);
   border-radius: var(--border-radius);
   cursor: pointer;
   font-family: var(--font-family) !important;
@@ -291,16 +279,15 @@ h1 {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  width: 280px;
   text-align: center;
-  border: 2px solid var(--accent);
+  color: var(--on-primary);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-  position: relative;
   overflow: hidden;
-  display: block;
-  margin: 0 auto;
+  transition: var(--transition);
 }
 
+/* Эффекты для кнопок меню */
 .menuBtn::before {
   content: "";
   position: absolute;
@@ -312,6 +299,7 @@ h1 {
   background: rgba(255, 255, 255, 0.5);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
+  z-index: 1;
 }
 
 .menuBtn:active::before {
@@ -391,23 +379,24 @@ h1 {
 }
 
 .backButton {
-  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
-  color: var(--on-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 280px;
   padding: 12px 20px;
+  border: 2px solid var(--accent);
   border-radius: var(--border-radius);
   cursor: pointer;
   font-family: var(--font-family);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: var(--transition);
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 280px;
-  border: 2px solid var(--accent);
+  color: var(--on-primary);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  transition: var(--transition);
 }
 
 .backButton:hover {

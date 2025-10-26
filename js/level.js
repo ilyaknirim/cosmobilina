@@ -1,5 +1,6 @@
 class Level {
     constructor() {
+        console.log("Creating base Level");
         this.entities = [];
         this.camera = {
             x: 0,
@@ -16,15 +17,18 @@ class Level {
     }
 
     init() {
+        console.log("Base Level init called");
         // Переопределяется в подклассах
     }
 
     update(deltaTime) {
+        console.log("Base Level update called");
         this.entities.forEach(entity => entity.update(deltaTime));
         this.updateCamera();
     }
 
     draw(ctx) {
+        console.log("Base Level draw called");
         ctx.save();
         ctx.translate(-this.camera.x, -this.camera.y);
         this.entities.forEach(entity => entity.draw(ctx));
