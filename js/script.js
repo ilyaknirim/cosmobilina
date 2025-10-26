@@ -134,6 +134,8 @@ document.querySelectorAll('.menuBtn').forEach(btn => {
         loreContent.innerHTML = loreData[section];
         startScreen.style.display = 'none';
         loreScreen.style.display = 'block';
+        // Прокручиваем контент в начало при открытии новой страницы
+        document.getElementById('loreScreen').scrollTop = 0;
     });
 });
 
