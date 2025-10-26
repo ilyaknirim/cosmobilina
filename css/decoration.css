@@ -1,0 +1,64 @@
+
+/* Декоративные элементы с эффектом выдвижения */
+.decoration-element {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.top-left {
+  top: 10%;
+  left: 10%;
+  transform: translateX(-50px) translateY(-50px);
+  animation: slideInTopLeft 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.top-right {
+  top: 10%;
+  right: 10%;
+  transform: translateX(50px) translateY(-50px);
+  animation: slideInTopRight 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.bottom-left {
+  bottom: 10%;
+  left: 10%;
+  transform: translateX(-50px) translateY(50px);
+  animation: slideInBottomLeft 1s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.bottom-right {
+  bottom: 10%;
+  right: 10%;
+  transform: translateX(50px) translateY(50px);
+  animation: slideInBottomRight 1s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+/* Анимации для декоративных элементов */
+@keyframes slideInTopLeft {
+  0% { transform: translateX(-50px) translateY(-50px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes slideInTopRight {
+  0% { transform: translateX(50px) translateY(-50px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes slideInBottomLeft {
+  0% { transform: translateX(-50px) translateY(50px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes slideInBottomRight {
+  0% { transform: translateX(50px) translateY(50px); }
+  100% { transform: translateX(0) translateY(0); }
+}

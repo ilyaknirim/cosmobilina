@@ -1,327 +1,394 @@
-/* Импорт шрифтов для славянского космопанка */
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik+Distressed&display=swap');
+/* Material Design для Telegram Mini App в стиле славянского космопанка */
+@import url('fonts.css');
 
-/* Глобальные стили и переменные - Славянский космопанк */
 :root {
-    /* Славянские цвета */
-    --primary-color: #8B0000; /* Темно-красный (славянский багрянец) */
-    --secondary-color: #2A5CAA; /* Синий космический */
-    --accent-color: #FFD700; /* Золотой (славянское золото) */
-    --accent-color-2: #CD5C5C; /* Индийский красный */
-    --accent-color-3: #B22222; /* Огненный кирпич */
-    --accent-color-4: #4169E1; /* Королевский синий */
-    --accent-color-5: #8A2BE2; /* Синий фиолетовый (космический) */
+  --font-family: 'SHRIFT', serif;
+  --header-font: 'Kramola', serif;
+  /* Славянские космические цвета */
+  --primary: #8B0000;
+  --primary-light: #CD5C5C;
+  --primary-dark: #5C0000;
+  --secondary: #2A5CAA;
+  --secondary-light: #4A7CEA;
+  --accent: #D4AF37;
+  --accent-light: #F4CF57;
 
-    /* Космические цвета */
-    --cosmic-purple: #483D8B; /* Темный сине-фиолетовый */
-    --cosmic-blue: #191970; /* Полуночно-синий */
-    --cosmic-teal: #008080; /* Чайный */
+  /* Material цвета */
+  --surface: #1E1E2E;
+  --surface-variant: #2A2A3E;
+  --background: #12121A;
+  --on-surface: #E0E0E0;
+  --on-primary: #FFFFFF;
 
-    /* Текст и фон */
-    --text-color: #F8F0E3; /* Слегка желтоватый белый */
-    --text-glow: rgba(255, 215, 0, 0.7); /* Свечение текста */
-    --text-shadow: rgba(139, 0, 0, 0.8); /* Тень текста */
+  /* Тени */
+  --shadow-1: 0 2px 4px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.28);
+  --shadow-2: 0 3px 6px rgba(0,0,0,0.23), 0 1px 2px rgba(0,0,0,0.31);
+  --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
-    /* Градиенты фона */
-    --bg-dark: #0A0E1A; /* Темный космос */
-    --bg-medium: #1A1F3A; /* Средний космос */
-    --bg-light: #2A3050; /* Светлый космос */
-
-    /* Эффекты */
-    --transition-speed: 0.3s;
-    --border-radius: 8px;
-    --glow-intensity: 0 0 20px;
-
-    /* Шрифты */
-    --font-family: "Russo One", "Arial Black", sans-serif;
-    --font-family-accent: "Rubik Distressed", cursive;
+  /* Размеры */
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Базовые стили */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Славянские космические цвета */
+  --primary: #8B0000;
+  --primary-light: #CD5C5C;
+  --primary-dark: #5C0000;
+  --secondary: #2A5CAA;
+  --secondary-light: #4A7CEA;
+  --accent: #D4AF37;
+  --accent-light: #F4CF57;
+
+  /* Material цвета */
+  --surface: #1E1E2E;
+  --surface-variant: #2A2A3E;
+  --background: #12121A;
+  --on-surface: #E0E0E0;
+  --on-primary: #FFFFFF;
+
+  /* Тени */
+  --shadow-1: 0 2px 4px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.28);
+  --shadow-2: 0 3px 6px rgba(0,0,0,0.23), 0 1px 2px rgba(0,0,0,0.31);
+  --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  /* Размеры */
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-light) 100%);
-    font-family: var(--font-family);
-    color: var(--text-color);
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+  background-color: var(--background);
+  color: var(--on-surface);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Анимированный космический фон */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, var(--cosmic-purple) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, var(--cosmic-blue) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
-    animation: cosmicPulse 20s ease-in-out infinite;
-    z-index: -2;
-}
-
-@keyframes cosmicPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.8; }
-}
-
-/* Космические частицы */
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 10% 20%, var(--accent-color) 1px, transparent 1px),
-        radial-gradient(circle at 50% 70%, var(--accent-color-4) 1px, transparent 1px),
-        radial-gradient(circle at 80% 10%, var(--accent-color-5) 1px, transparent 1px);
-    background-size: 200px 200px;
-    z-index: -1;
-    animation: starsMove 120s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes starsMove {
-    from { transform: translate(0, 0); }
-    to { transform: translate(-100px, -100px); }
-}
-
-/* Контейнеры экранов */
+/* Экраны */
 .screen {
-    display: none;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: relative;
 }
 
 .screen.active {
-    display: flex;
+  display: block;
 }
 
-/* Главный экран */
-#startScreen {
-    position: relative;
-    overflow: hidden;
+/* Фрейм для всех элементов */
+.content-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
 }
 
 /* Заголовок */
-#startScreen h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    margin-bottom: 20px;
-    text-shadow: 
-        0 0 10px var(--text-glow),
-        0 0 20px var(--accent-color);
-    color: var(--accent-color);
-    letter-spacing: 3px;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    line-height: 1.2;
-    animation: titlePulse 4s ease-in-out infinite;
-    font-family: var(--font-family);
-}
-
-@keyframes titlePulse {
-    0%, 100% { opacity: 0.9; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.02); }
+h1 {
+  font-family: var(--header-font) !important;
+  font-size: clamp(1.8rem, 8vw, 2.5rem);
+  color: var(--accent);
+  margin: 0 auto 24px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
 }
 
 /* Подзаголовок */
 .subtitle {
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    color: var(--accent-color-4);
-    margin-bottom: 40px;
-    text-shadow: 0 0 10px var(--accent-color-4);
-    letter-spacing: 4px;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-family: var(--font-family);
-    position: relative;
-    display: inline-block;
-}
-
-.subtitle::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-    animation: lineGlow 3s ease-in-out infinite;
-}
-
-@keyframes lineGlow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: var(--secondary);
+  margin: 0 auto 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  text-align: center;
+  width: 100%;
+  font-family: var(--font-family) !important;
 }
 
 /* Контейнер для кнопок */
 .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 320px;
 }
 
-/* Кнопки */
+/* Кнопки в стиле славянского космопанка */
 .btn {
-    border: 2px solid var(--accent-color);
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    overflow: hidden;
-    background: rgba(42, 92, 170, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    z-index: 1;
-    font-family: var(--font-family);
-    width: 200px;
-    text-align: center;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.8), rgba(42, 92, 170, 0.8));
+  color: var(--on-primary);
+  padding: 14px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  width: 280px;
+  text-align: center;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Эффект нажатия */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 1), rgba(42, 92, 170, 1));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Основная кнопка */
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
-    border: 2px solid var(--accent-color);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(42, 92, 170, 0.9));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, var(--accent-color-2), var(--secondary-color));
-    box-shadow: 0 0 25px rgba(139, 0, 0, 0.7), var(--glow-intensity) var(--accent-color);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 1), rgba(42, 92, 170, 1));
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background: linear-gradient(135deg, rgba(92, 0, 0, 0.9), rgba(32, 62, 130, 0.9));
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Вторичная кнопка */
 .btn-secondary {
-    background: rgba(42, 92, 170, 0.2);
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 0.9), rgba(72, 61, 139, 0.9));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 215, 0, 0.2);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 1), rgba(72, 61, 139, 1));
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
 }
 
-/* Меню */
-.menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    width: 100%;
-    max-width: 600px;
-    margin: 30px 0;
-    position: relative;
-    padding: 20px;
+/* Меню в стиле "ПАНК" */
+.punk-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
 }
 
-/* Кнопки меню */
+/* Кнопки, выдвигающиеся слева */
+.punk-left {
+  transform: translateX(-10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.punk-left:hover {
+  transform: translateX(0);
+  box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Кнопки, выдвигающиеся справа */
+.punk-right {
+  transform: translateX(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.punk-right:hover {
+  transform: translateX(0);
+  box-shadow: -5px 5px 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Кнопки меню в стиле "ПАНК" */
 .menuBtn {
-    background: rgba(42, 92, 170, 0.3);
-    border: 1px solid var(--accent-color);
-    padding: 12px 15px;
-    color: var(--accent-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    position: relative;
-    overflow: hidden;
-    font-family: var(--font-family);
-    width: 100%;
-    text-align: center;
+  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
+  color: var(--on-primary);
+  padding: 14px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 280px;
+  text-align: center;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
+.menuBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.menuBtn:active::before {
+  width: 300px;
+  height: 300px;
 }
 
 .menuBtn:hover {
-    background: rgba(255, 215, 0, 0.2);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    color: var(--accent-color-5);
-    border-color: var(--accent-color-5);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 1), rgba(72, 61, 139, 1));
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+.menuBtn:active {
+  background: linear-gradient(135deg, rgba(32, 62, 130, 0.9), rgba(52, 41, 109, 0.9));
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Экран с описанием */
-#loreScreen {
-    padding: 20px;
-    overflow-y: auto;
-    background: rgba(10, 14, 26, 0.95);
-    position: relative;
-}
-
 #loreContent {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(26, 31, 58, 0.7);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--surface-variant);
+  border-radius: var(--border-radius);
+  text-align: left;
+  box-shadow: var(--shadow-2);
 }
 
 #loreContent h2 {
-    color: var(--accent-color);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--header-font) !important;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary);
+  text-align: center;
 }
 
 #loreContent h3 {
-    color: var(--accent-color-4);
-    font-size: 1.4rem;
-    margin: 20px 0 10px;
+  color: var(--secondary);
+  font-size: 1.4rem;
+  margin: 20px 0 10px;
 }
 
 #loreContent p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: var(--on-surface);
 }
 
 /* Кнопка возврата */
 .backButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(42, 92, 170, 0.5);
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 10px 15px;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    font-family: var(--font-family);
-    font-weight: bold;
-    z-index: 10;
+  background: linear-gradient(135deg, rgba(42, 92, 170, 0.8), rgba(72, 61, 139, 0.8));
+  color: var(--on-primary);
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .backButton:hover {
-    background: rgba(255, 215, 0, 0.2);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, rgba(42, 92, 170, 1), rgba(72, 61, 139, 1));
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .screen {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  .button-container {
+    max-width: 280px;
+  }
 }

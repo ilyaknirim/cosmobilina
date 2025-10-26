@@ -4,28 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СКВОЗЬ ЧАРОМУТУ ГЛУБИННОЙ</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=15.0">
+    <link rel="stylesheet" href="css/decoration.css">
 </head>
 <body>
     <div id="startScreen">
-        <div class="cosmic-decoration"></div>
-        <h1>СКВОЗЬ ЧАРОМУТУ ГЛУБИННОЙ</h1>
-        <div class="subtitle">Путешествие звездного витязя</div>
-        <button id="startGameBtn" class="btn btn-primary">Начать игру</button>
-        <div class="menu">
-            <button class="menuBtn btn-secondary" data-section="logline">Логлайн</button>
-            <button class="menuBtn btn-secondary" data-section="characters">Персонажи</button>
-            <button class="menuBtn btn-secondary" data-section="locations">Локации</button>
-            <button class="menuBtn btn-secondary" data-section="artifacts">Артефакты</button>
-            <button class="menuBtn btn-secondary" data-section="monsters">Монстры</button>
+        <div class="content-frame">
+            <div class="cosmic-decoration"></div>
+            <div class="decoration-element top-left"></div>
+            <div class="decoration-element top-right"></div>
+            <div class="decoration-element bottom-left"></div>
+            <div class="decoration-element bottom-right"></div>
+            <h1>СКВОЗЬ ЧАРОМУТУ ГЛУБИННОЙ</h1>
+            <div class="subtitle">Путешествие звездного витязя</div>
+            <button id="startGameBtn" class="btn btn-primary">Начать игру</button>
+            <div class="punk-menu">
+                <button class="menuBtn btn-secondary punk-left" data-section="logline">Логлайн</button>
+                <button class="menuBtn btn-secondary punk-right" data-section="characters">Персонажи</button>
+                <button class="menuBtn btn-secondary punk-left" data-section="locations">Локации</button>
+                <button class="menuBtn btn-secondary punk-right" data-section="artifacts">Артефакты</button>
+                <button class="menuBtn btn-secondary punk-left" data-section="monsters">Монстры</button>
+            </div>
         </div>
     </div>
     <div id="loreScreen" style="display: none;">
-        <button id="backBtn" class="btn btn-secondary">Назад</button>
-        <div id="loreContent"></div>
+        <div class="content-frame">
+            <button id="backBtn" class="btn btn-secondary">Назад</button>
+            <div id="loreContent"></div>
+        </div>
     </div>
     <div id="gameUI" style="display: none;">
-        <button id="pauseBtn" class="btn btn-secondary">Вернуться в меню</button>
+        <div class="content-frame">
+            <button id="pauseBtn" class="btn btn-secondary">Вернуться в меню</button>
+        </div>
     </div>
     <canvas id="gameCanvas" style="display: none;"></canvas>
 </body>
